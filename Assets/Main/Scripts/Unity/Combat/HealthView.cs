@@ -1,18 +1,41 @@
+using Main.Scripts.Domain.Combat;
+using Main.Scripts.Domain.Signals;
 using UnityEngine;
 using Zenject;
 
-public class HealthView : MonoBehaviour
+namespace Main.Scripts.Unity.Combat
 {
-    IHealth _health;
-
-    [Inject]
-    public void Construct(IHealth health)
+    public class HealthView : MonoBehaviour
     {
-        _health = health;
-    }
+        IHealth _health;
+        SignalBus _signalBus;
 
-    public void Hit(int dmg)
-    {
-        _health.TakeDamage(dmg);
+        [Inject]
+        public void Construct(IHealth health, SignalBus signalBus)
+        {
+            _health = health;
+            _signalBus = signalBus;
+
+            _health.Died += OnDied;
+        }
+    
+        private void OnDied()
+        {
+            _signalBus.Fire(new EntityDiedSignal
+            {
+                Entity = gameObject
+            });
+        }
+
+        private void OnDestroy()
+        {
+            if (_health != null)
+                _health.Died -= OnDied;
+        }
+
+        public void Hit(int dmg)
+        {
+            _health.TakeDamage(dmg);
+        }
     }
 }
