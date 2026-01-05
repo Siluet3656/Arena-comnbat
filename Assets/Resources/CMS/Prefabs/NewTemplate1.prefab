@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8651229935422044561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5278803076267055352}
+  - component: {fileID: 8795724897522453779}
+  m_Layer: 0
+  m_Name: NewTemplate1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5278803076267055352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651229935422044561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8795724897522453779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651229935422044561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1729a46f79086449a991b5512530e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CMS::CMSEntityPfb
+  idCMS: CMS\Prefabs/NewTemplate1
+  Components:
+  - rid: 7474197599698551060
+  - rid: 7474197599698551061
+  - rid: 7474197599698551062
+  - rid: 7474197599698551063
+  - rid: 7474197599698551064
+  references:
+    version: 2
+    RefIds:
+    - rid: 7474197599698551060
+      type: {class: EntityComponentDefinition, ns: , asm: CMS}
+      data: 
+    - rid: 7474197599698551061
+      type: {class: TagCMSEntity, ns: Runtime, asm: CMS}
+      data:
+        pfb: {fileID: 0}
+    - rid: 7474197599698551062
+      type: {class: TagListCMSEntity, ns: Runtime, asm: CMS}
+      data:
+        pfbs: []
+    - rid: 7474197599698551063
+      type: {class: TagMesh, ns: Runtime, asm: CMS}
+      data:
+        model: {fileID: 0}
+    - rid: 7474197599698551064
+      type: {class: TagSprite, ns: Runtime, asm: CMS}
+      data:
+        sprite: {fileID: 0}

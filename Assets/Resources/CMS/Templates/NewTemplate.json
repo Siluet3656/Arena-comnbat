@@ -1,0 +1,25 @@
+{
+    "templateName": "NewTemplate",
+    "components": [
+        {
+            "type": "EntityComponentDefinition, CMS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{}"
+        },
+        {
+            "type": "Runtime.TagCMSEntity, CMS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{\"pfb\":{\"instanceID\":0}}"
+        },
+        {
+            "type": "Runtime.TagListCMSEntity, CMS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{\"pfbs\":[]}"
+        },
+        {
+            "type": "Runtime.TagMesh, CMS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{\"model\":{\"instanceID\":0}}"
+        },
+        {
+            "type": "Runtime.TagSprite, CMS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{\"sprite\":{\"instanceID\":0}}"
+        }
+    ]
+}
