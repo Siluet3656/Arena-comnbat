@@ -1,0 +1,17 @@
+{
+    "templateName": "Enemy",
+    "components": [
+        {
+            "type": "Runtime.TagSprite, CMS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{\"sprite\":{\"instanceID\":1014}}"
+        },
+        {
+            "type": "Main.Scripts.Enemy.TagEnemyStats, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{\"_health\":0,\"_damage\":0,\"_armor\":0}"
+        },
+        {
+            "type": "Main.Scripts.Enemy.TagEnemyVisual, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "jsonData": "{}"
+        }
+    ]
+}

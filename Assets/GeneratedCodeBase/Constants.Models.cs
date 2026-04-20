@@ -3,5 +3,9 @@ namespace Constants
 {
     public static class Models
     {
+
+        // --- Ungrouped ---
+        public const string Enemy1 = "CMS/Prefabs/Models/Enemy 1";
+        public const string Enemy2 = "CMS/Prefabs/Models/Enemy 2";
     }
 }
