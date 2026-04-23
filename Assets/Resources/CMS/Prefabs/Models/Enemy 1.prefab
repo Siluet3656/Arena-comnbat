@@ -58,6 +58,7 @@ MonoBehaviour:
         _health: 250
         _damage: 20
         _armor: 10
+        _speed: 1
     - rid: 2536203252098400325
       type: {class: TagEnemyVisual, ns: Main.Scripts.Enemy, asm: Assembly-CSharp}
       data: 

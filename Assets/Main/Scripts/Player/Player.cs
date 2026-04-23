@@ -1,5 +1,6 @@
 // This first example shows how to move using Input System Package (New)
 
+using Main.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,6 @@ public class Player : MonoBehaviour
 {
     private float playerSpeed = 5.0f;
     private float jumpHeight = 1.5f;
-    private float gravityValue = -9.81f;
 
     public CharacterController controller;
     private Vector3 playerVelocity;
@@ -51,11 +51,11 @@ public class Player : MonoBehaviour
         // Jump using WasPressedThisFrame()
         if (groundedPlayer && jumpAction.action.WasPressedThisFrame())
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * G.GravityValue);
         }
 
         // Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += G.GravityValue * Time.deltaTime;
 
         // Move
         Vector3 finalMove = move * playerSpeed + Vector3.up * playerVelocity.y;

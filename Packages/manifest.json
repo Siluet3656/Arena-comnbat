@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.cysharp.r3": "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity",
     "com.megurte.cms": "https://github.com/megurte/ContentManagementSystem.git?path=/src#1.5.21",
     "com.svermeulen.extenject": "https://github.com/Mathijs-Bakker/Extenject.git?path=UnityProject/Assets/Plugins/Zenject",
     "com.unity.addressables": "2.7.6",

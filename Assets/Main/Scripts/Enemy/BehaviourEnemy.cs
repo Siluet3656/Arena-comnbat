@@ -1,33 +1,46 @@
+using R3;
 using UnityEngine;
 using Zenject;
 
 namespace Main.Scripts.Enemy
 {
-    public class EnemyBehaviour : MonoBehaviour
+    [RequireComponent(typeof(CharacterController))]
+    public class BehaviourEnemy : MonoBehaviour
     {   
-        private Transform target;
-        private Vector3 velocity;
+        private EnemyController controller;
+        private Transform playerTransform;
     
-        public CharacterController _controller;
-        public float enemySpeed;
+        private CharacterController characterController;
 
+        private readonly CompositeDisposable disposables = new();
+        
         [Inject]
-        private void Construct(Player player)
+        private void Construct(EnemyController enemyController, Player player)
         {
-            target = player.transform;
+            playerTransform = player.transform;
+            controller = enemyController;
         }
-    
-        void Update()
-        {
-            Vector3 moveDirection = (target.position - transform.position).normalized;
 
-            if (moveDirection != Vector3.zero)
-                transform.forward = moveDirection;
+        private void Awake()
+        {
+            characterController = GetComponent<CharacterController>();
+            controller.BindView(characterController, transform, playerTransform);
+        }
+
+        private void Update()
+        {
+            Vector3 moveDelta = controller.CalculateMovementDelta();
             
-            velocity.y += G.GravityValue * Time.deltaTime;
+            if (moveDelta != Vector3.zero)
+                transform.forward = new Vector3(moveDelta.x, 0, moveDelta.z);
             
-            Vector3 finalMove = moveDirection * enemySpeed;
-            _controller.Move(finalMove * Time.deltaTime + Vector3.up * velocity.y);
+            characterController.Move(moveDelta);
+        }
+
+        private void OnDestroy()
+        {
+            controller.Dispose();
+            disposables.Dispose();
         }
     }
 }
