@@ -1,5 +1,3 @@
-using Constants;
-using Main.Scripts.Enemy;
 using UnityEngine;
 using Zenject;
 
@@ -12,11 +10,12 @@ namespace Main.Scripts.Installers
         {
             Container.Bind<Player>().FromInstance(_player).AsSingle();
             
-            CMSEntity data = CMS.Get<CMSEntity>(Models.Enemy1);
-            ModelEnemy model = new ModelEnemy(data);
+            //CMSEntity data = CMS.Get<CMSEntity>(Models.Enemy1);
+            //EnemyModel model = new EnemyModel(data);
             
-            Container.Bind<ModelEnemy>().FromInstance(model).AsSingle();
-            Container.Bind<EnemyController>().AsSingle();
+            //Container.Bind<EnemyMovement>().AsSingle();
+            //Container.Bind<EnemyModel>().FromInstance(model).AsSingle();
+            //Container.Bind<EnemyController>().AsSingle();
         }
     }
 }

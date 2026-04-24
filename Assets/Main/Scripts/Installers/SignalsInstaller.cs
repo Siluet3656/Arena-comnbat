@@ -1,3 +1,4 @@
+using Main.Scripts.Signals;
 using R3;
 using Zenject;
 
@@ -9,7 +10,9 @@ namespace Main.Scripts.Installers
         {
             ObservableSystem.DefaultFrameProvider = UnityFrameProvider.Update;
             
-            SignalBusInstaller.Install(Container);  
+            SignalBusInstaller.Install(Container);
+
+            Container.DeclareSignal<SignalEnemyDeath>();
         }
     }
 }

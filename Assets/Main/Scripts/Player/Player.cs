@@ -1,6 +1,7 @@
 // This first example shows how to move using Input System Package (New)
 
 using Main.Scripts;
+using Main.Scripts.Globals;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

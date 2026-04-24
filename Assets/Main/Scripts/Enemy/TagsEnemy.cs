@@ -1,5 +1,5 @@
 using System;
-using System.Drawing;
+using UnityEngine;
 
 namespace Main.Scripts.Enemy
 {
@@ -15,6 +15,6 @@ namespace Main.Scripts.Enemy
     [Serializable]
     public class TagEnemyVisual : EntityComponentDefinition
     {
-        public Color Color;
+        public Color _color;
     }
 }
